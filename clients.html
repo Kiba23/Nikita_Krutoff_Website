@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FF SYSTEM | Clients</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="images/New Logo (icon).png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="wrap">
+        <header>
+            <div class="log">
+             <a href="index.html" class="logo"><img src="images/New%20Logo.PNG" alt=""></a>
+           </div>
+            <nav>
+            <ul>
+                <li>
+                    <a href="about.html">About</a>
+                    <a href="gallery.html">Gallery</a>
+                    <a href="clients.html">Clients</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="tel:+3800674794749" id="once">+38 (067) 479-47-49</a>
+                    <a href="index.ru.html" id="language">RU</a>
+                </li>
+            </ul>
+        </nav>
+        </header>
+
+        <h2 id="about_sec">CLIENTS</h2>
+        <p class="text_gallery" id="contact_rus"><span>Our Partners </span> who help us a lot in our professional growing by ordering our services. We appriciate it a lot.</p>
+        <div id="clients_mebli"><a href="https://memomebli.com.ua/" id="memo" target="_blank"><img src="images/memo.png" alt="Clients" id="png"></a></div>
+
+    <div class="my_goal">
+      <h5 id="color">MY GOAL</h5>
+      <p id="text_goal">My goal and passion is to provide innovative, creative, visually appealing and feature-rich videos and montage it as well professional clip-maker that helps business growth. I hold myself to the highest standarts of creative and technical excellence. Every client, looking for the size of project, can expect the best idea, angels, montage and professionalism from the experienced clip-maker. Come visit me in CONTACT list.</p>
+    </div>
+
+    <footer>
+      <div class="social_media">
+      <a href=""><img src="images/Telega.png" alt="Telegram" title="Telegram" class="size"></a>
+      <a href=""><img src="images/Insta.png" alt="Instagram" title="Instagram" class="size"></a>
+      <a href=""><img src="images/VK.png" alt="VK" title="VK" class="size"></a>
+      <a href=""><img src="images/face.png" alt="Facebook" title="Facebook" class="size"></a>
+      </div>
+      <div class="kyiv">
+        <h6>Kyiv</h6>
+        <p>Phone: +38 (067) 479-47-49</p>
+        <p>Office: Mechnikova 40 Street</p>
+        <p>Mail: nikit.krutof@ukr.net</p>
+      </div>
+      <div id="sizing">
+      <button onclick="scrollToTop(300,3);" id="myBtn" title="Go to top"><i class="fa fa-arrow-up"></i></button>
+      </div>
+
+            <p id="dev_p">Site Developed by <a href="https://www.facebook.com/anton.kibalka" target="_blank" id="dev_a">Anton Kibalka</a></p>
+    </footer>
+
+    </div>
+
+
+<script>
+
+var html, body, scrollToTopButton;
+window.onload = function() {
+  html = document.documentElement;
+  body = document.body;
+  scrollToTopButton = document.getElementById("scrollToTopButton");
+};
+
+function scrollToTop(totalTime, easingPower) {
+  var timeInterval = 1;
+  var scrollTop = Math.round(body.scrollTop || html.scrollTop);
+  var timeLeft = totalTime;
+  var scrollByPixel = setInterval(function() {
+    var percentSpent = (totalTime - timeLeft) / totalTime;
+    if (timeLeft >= 0) {
+      var newScrollTop = scrollTop * (1 - easeInOut(percentSpent, easingPower));
+      body.scrollTop = newScrollTop;
+      html.scrollTop = newScrollTop;
+      timeLeft--;
+    } else {
+      clearInterval(scrollByPixel);
+    }
+  }, timeInterval);
+}
+
+function easeInOut(t, power) {
+  if (t < 0.5) {
+    return 0.5 * Math.pow(2 * t, power);
+  } else {
+    return 0.5 * (2 - Math.pow(2 * (1 - t), power));
+  }
+}
+
+window.onscroll = controlScrollToTopButton;
+
+
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 4000);
+}
+
+</script>
+
+
+</body>
+</html>
